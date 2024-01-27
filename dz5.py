@@ -1,8 +1,13 @@
-def guess_the_number():
+import random
+
+def welcome_message():
     print("Добро пожаловать в игру 'Угадай число'!")
     print("Я загадаю число от 1 до 100, а вы попробуете угадать его.")
 
-    secret_number = random.randint(1, 100)
+def generate_secret_number():
+    return random.randint(1, 100)
+
+def play_guessing_game(secret_number):
     attempts = 0
 
     while True:
@@ -18,4 +23,6 @@ def guess_the_number():
             print("Нет, число меньше. Попробуйте еще раз.")
 
 if name == "main":
-    guess_the_number()
+    welcome_message()
+    secret_number = generate_secret_number()
+    play_guessing_game(secret_number)
